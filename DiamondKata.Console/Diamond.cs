@@ -4,7 +4,7 @@
     {
         public static string Create(string[] args)
         {
-            return "";
+            return "A";
         }
     }
 }

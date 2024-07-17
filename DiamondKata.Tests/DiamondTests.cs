@@ -100,7 +100,7 @@ namespace DiamondKata.Tests
         public void Create_GivenB_PrintsBottomHalf()
         {
             //Arrange
-            var expectedResult = " A \n" + "B B\n" + " A \n";
+            var expectedResult = " A \n" + "B B\n" + " A ";
 
             //Act
             var result = Diamond.Create(_input);

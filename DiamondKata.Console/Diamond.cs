@@ -18,50 +18,44 @@ namespace DiamondKata.Console
             //top half
             for(char i = 'A'; i <= midPoint; i++)
             {
-                var space = new string(' ', midPoint - i);
-
-                if (i == 'A')
-                {
-                    diamond.Append($"{space}{i}{space}");
-                    diamond.Append("\n");
-                }
-                else
-                {
-                    var index = i - 'A';
-                    var spaceBetween = new string(' ', 2 * index - 1);
-
-                    diamond.Append($"{space}{i}{spaceBetween}{i}{space}");
-                    diamond.Append("\n");
-                }
+                var line = CreateLine(i, midPoint);
+                diamond.Append(line);
+                diamond.Append('\n');
             }
 
             //bottom half
-            for(char i = midPoint; i >= 'A'; i--)
+            for(char i = (char)(midPoint - 1); i >= 'A'; i--)
             {
-                if (i == midPoint)
-                {
-                    continue;
-                }
+                var line = CreateLine(i, midPoint);
+                diamond.Append(line);
 
-                var space = new string(' ', midPoint - i);
-
-                if (i == 'A') 
+                if (i != 'A')
                 {
-                    diamond.Append($"{space}{i}{space}");
-                    diamond.Append("\n");
-                }
-                else
-                {
-                    var index = i - 'A';
-                    var spaceBetween = new string(' ', 2 * index - 1);
-
-                    diamond.Append($"{space}{i}{spaceBetween}{i}{space}");
-                    diamond.Append("\n");
+                    diamond.Append('\n');
                 }
             }
 
-
             return diamond.ToString();
+        }
+
+        public static string CreateLine(char index, char midPoint)
+        {
+            var diamondLine = new StringBuilder();
+            var space = new string(' ', midPoint - index);
+
+            if (index == 'A')
+            {
+                diamondLine.Append($"{space}{index}{space}");
+            }
+            else
+            {
+                var sizeIndex = index - 'A';
+                var spaceBetween = new string(' ', 2 * sizeIndex - 1);
+
+                diamondLine.Append($"{space}{index}{spaceBetween}{index}{space}");
+            }
+
+            return diamondLine.ToString();
         }
     }
 }

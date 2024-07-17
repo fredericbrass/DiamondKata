@@ -4,7 +4,14 @@
     {
         public static string Create(string[] args)
         {
-            return "A";
+            var midpoint = args[0][0];
+
+            if(midpoint == 'A')
+            {
+                return "A";
+            }
+
+            return "AB";
         }
     }
 }

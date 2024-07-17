@@ -1,26 +1,27 @@
-﻿namespace DiamondKata.Console
+﻿using System.Text;
+
+namespace DiamondKata.Console
 {
     public static class Diamond
     {
         public static string Create(string[] args)
         {
             var midPoint = args[0][0];
-            string diamond = "";
+            var diamond = new StringBuilder();
 
             for(var i = 'A'; i <= midPoint; i++)
             {
                 if(i == 'A')
                 {
-                    diamond += i;
+                    diamond.Append(i);
                 }
                 else
                 {
-                    diamond += i;
-                    diamond += i;
+                    diamond.Append($"{i}{i}");
                 }
             }
 
-            return diamond;
+            return diamond.ToString();
         }
     }
 }

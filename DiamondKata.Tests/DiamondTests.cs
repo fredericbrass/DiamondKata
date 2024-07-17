@@ -116,7 +116,7 @@ namespace DiamondKata.Tests
             var expectedResult = "    A    \n" + "   B B   \n" + "  C   C  \n" + " D     D \n" + "E       E\n" + " D     D \n" + "  C   C  \n" + "   B B   \n" + "    A    ";
 
             //Act
-            var result = Diamond.Create(_input);
+            var result = Diamond.Create(["E"]);
 
             //Assert
             Assert.That(result, Is.EqualTo(expectedResult));

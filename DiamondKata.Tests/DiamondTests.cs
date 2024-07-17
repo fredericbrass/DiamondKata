@@ -19,6 +19,7 @@ namespace DiamondKata.Tests
         }
 
         [Test]
+        [Ignore("test now redundant as repeated characters added to diamond create")]
         public void Create_GivenB_GivesSequencing()
         {
             //Arrange

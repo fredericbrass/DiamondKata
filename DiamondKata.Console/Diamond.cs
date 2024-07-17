@@ -9,7 +9,15 @@
 
             for(var i = 'A'; i <= midPoint; i++)
             {
-                diamond += i;
+                if(i == 'A')
+                {
+                    diamond += i;
+                }
+                else
+                {
+                    diamond += i;
+                    diamond += i;
+                }
             }
 
             return diamond;

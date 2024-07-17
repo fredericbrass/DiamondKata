@@ -7,6 +7,8 @@ namespace DiamondKata.Services
     {
         public string Create(string[] args)
         {
+            ValidateInput(args);
+
             var midPoint = args[0][0];
 
             if (midPoint == 'A')
@@ -39,7 +41,7 @@ namespace DiamondKata.Services
             return diamond.ToString();
         }
 
-        public string CreateLine(char index, char midPoint)
+        private string CreateLine(char index, char midPoint)
         {
             var diamondLine = new StringBuilder();
             var space = new string(' ', midPoint - index);
@@ -57,6 +59,19 @@ namespace DiamondKata.Services
             }
 
             return diamondLine.ToString();
+        }
+
+        private void ValidateInput(string[] args)
+        {
+            if(args.Length > 1 || args[0].Length > 1)
+            {
+                throw new ArgumentException("Invalid input - Please enter a singular character");
+            }
+
+            if (!char.IsLetter(args[0][0]))
+            {
+                throw new ArgumentException("Invalid input - Please enter a singular character");
+            }
         }
     }
 }

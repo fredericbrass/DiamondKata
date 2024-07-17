@@ -53,5 +53,14 @@ namespace DiamondKata.Tests
             //Assert
             Assert.That(result, Is.EqualTo(expectedResult));
         }
+
+        [TestCase("CC")]
+        [TestCase("6")]
+        [TestCase("*")]
+        public void Create_GivenBadCharacter_ThrowsException(string input)
+        {
+            //Assert
+            Assert.Throws<ArgumentException>(() => _diamondService.Create([input]));
+        }
     }
 }

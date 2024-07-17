@@ -1,5 +1,4 @@
-﻿using DiamondKata.Console;
-using DiamondKata.Services;
+﻿using DiamondKata.Services;
 using DiamondKata.Services.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 

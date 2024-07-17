@@ -4,6 +4,14 @@ namespace DiamondKata.Tests
 {
     public class DiamondCreateTests
     {
+        private string[] _input;
+
+        [SetUp]
+        public void SetUp()
+        {
+            _input = ["B"];
+        }
+
         [Test]
         public void Create_GivenA_ReturnsA()
         {
@@ -24,10 +32,9 @@ namespace DiamondKata.Tests
         {
             //Arrange
             var expectedResult = "AB";
-            string[] input = ["B"];
 
             //Act
-            var result = Diamond.Create(input);
+            var result = Diamond.Create(_input);
 
             //Assert
             Assert.That(result, Is.EqualTo(expectedResult));
@@ -38,10 +45,22 @@ namespace DiamondKata.Tests
         {
             //Arrange
             var expectedResult = "ABB";
-            string[] input = ["B"];
 
             //Act
-            var result = Diamond.Create(input);
+            var result = Diamond.Create(_input);
+
+            //Assert
+            Assert.That(result, Is.EqualTo(expectedResult));
+        }
+
+        [Test]
+        public void Create_GivenB_EachCharIsSeparatedOnNewLine()
+        {
+            //Arrange
+            var expectedResult = "A\n" + "BB\n";
+
+            //Act
+            var result = Diamond.Create(_input);
 
             //Assert
             Assert.That(result, Is.EqualTo(expectedResult));

@@ -29,7 +29,7 @@ namespace DiamondKata.Console
                     var index = i - 'A';
                     var spaceBetween = new string(' ', 2 * index - 1);
 
-                    diamond.Append($"{space}{i}{i}{space}");
+                    diamond.Append($"{space}{i}{spaceBetween}{i}{space}");
                     diamond.Append("\n");
                 }
             }

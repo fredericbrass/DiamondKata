@@ -6,12 +6,15 @@ TDD approach is shown within the commits history of this repository.
 
 ## Usage
 
+### build
+
 ```sh
-\DiamondKata>
+cd \DiamondKata
 dotnet build
 ```
 
+### run
+
 ```sh
-\DiamondKata\bin\Debug\net8.0>
-DiamondKata.exe H
+cd DiamondKata.Console\bin\Debug\net8.0>DiamondKata.Console.exe H
 ```

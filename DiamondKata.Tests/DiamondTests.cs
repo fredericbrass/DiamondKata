@@ -1,16 +1,21 @@
+using DiamondKata.Console;
+
 namespace DiamondKata.Tests
 {
     public class DiamondCreateTests
     {
-        [SetUp]
-        public void Setup()
-        {
-        }
-
         [Test]
-        public void Test1()
+        public void Create_GivenA_ReturnsA()
         {
-            Assert.Pass();
+            //Arrange
+            var expectedResult = "A";
+            string[] input = ["A"];
+
+            //Act
+            var result = Diamond.Create(input);
+
+            //Assert
+            Assert.That(result, Is.EqualTo(expectedResult));
         }
     }
 }

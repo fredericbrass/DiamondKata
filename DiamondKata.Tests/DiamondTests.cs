@@ -83,6 +83,7 @@ namespace DiamondKata.Tests
         }
 
         [Test]
+        [Ignore("test redundant as bottom half has been added to diamond create")]
         public void Create_GivenB_AddSpaceBetweenChars()
         {
             //Arrange

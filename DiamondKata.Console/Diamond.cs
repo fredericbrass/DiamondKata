@@ -14,10 +14,12 @@ namespace DiamondKata.Console
                 if(i == 'A')
                 {
                     diamond.Append(i);
+                    diamond.Append("\n");
                 }
                 else
                 {
                     diamond.Append($"{i}{i}");
+                    diamond.Append("\n");
                 }
             }
 

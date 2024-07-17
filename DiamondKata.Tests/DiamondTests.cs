@@ -1,15 +1,17 @@
-using DiamondKata.Console;
+using DiamondKata.Services;
 
 namespace DiamondKata.Tests
 {
     public class DiamondCreateTests
     {
         private string[] _input;
+        private DiamondService _diamondService;
 
         [SetUp]
         public void SetUp()
         {
             _input = ["B"];
+            _diamondService = new DiamondService();
         }
 
         [Test]
@@ -20,7 +22,7 @@ namespace DiamondKata.Tests
             string[] input = ["A"];
 
             //Act
-            var result = Diamond.Create(input);
+            var result = _diamondService.Create(input);
 
             //Assert
             Assert.That(result, Is.EqualTo(expectedResult));
@@ -33,7 +35,7 @@ namespace DiamondKata.Tests
             var expectedResult = " A \n" + "B B\n" + " A ";
 
             //Act
-            var result = Diamond.Create(_input);
+            var result = _diamondService.Create(_input);
 
             //Assert
             Assert.That(result, Is.EqualTo(expectedResult));
@@ -46,7 +48,7 @@ namespace DiamondKata.Tests
             var expectedResult = "    A    \n" + "   B B   \n" + "  C   C  \n" + " D     D \n" + "E       E\n" + " D     D \n" + "  C   C  \n" + "   B B   \n" + "    A    ";
 
             //Act
-            var result = Diamond.Create(["E"]);
+            var result = _diamondService.Create(["E"]);
 
             //Assert
             Assert.That(result, Is.EqualTo(expectedResult));

@@ -4,14 +4,15 @@
     {
         public static string Create(string[] args)
         {
-            var midpoint = args[0][0];
+            var midPoint = args[0][0];
+            string diamond = "";
 
-            if(midpoint == 'A')
+            for(var i = 'A'; i <= midPoint; i++)
             {
-                return "A";
+                diamond += i;
             }
 
-            return "AB";
+            return diamond;
         }
     }
 }

@@ -7,6 +7,12 @@ namespace DiamondKata.Console
         public static string Create(string[] args)
         {
             var midPoint = args[0][0];
+            
+            if(midPoint == 'A')
+            {
+                return "A";
+            }
+
             var diamond = new StringBuilder();
 
             for(var i = 'A'; i <= midPoint; i++)

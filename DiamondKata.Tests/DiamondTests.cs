@@ -55,6 +55,7 @@ namespace DiamondKata.Tests
         }
 
         [Test]
+        [Ignore("test redundant as space either side of character has been added to diamond create")]
         public void Create_GivenB_EachCharIsSeparatedOnNewLine()
         {
             //Arrange
@@ -71,13 +72,13 @@ namespace DiamondKata.Tests
         public void Create_GivenB_IdentCharsOnEachSide()
         {
             //Arrange
-            var expectedAnswer = " A \n" + "BB\n";
+            var expectedResult = " A \n" + "BB\n";
 
             //Act
             var result = Diamond.Create(_input);
 
             //Assert
-            Assert.That(result, Is.EqualTo(expectedAnswer));
+            Assert.That(result, Is.EqualTo(expectedResult));
         }
     }
 }

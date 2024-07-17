@@ -17,14 +17,16 @@ namespace DiamondKata.Console
 
             for(var i = 'A'; i <= midPoint; i++)
             {
-                if(i == 'A')
+                var space = new string(' ', midPoint - i);
+
+                if (i == 'A')
                 {
-                    diamond.Append(i);
+                    diamond.Append($"{space}{i}{space}");
                     diamond.Append("\n");
                 }
                 else
                 {
-                    diamond.Append($"{i}{i}");
+                    diamond.Append($"{space}{i}{i}{space}");
                     diamond.Append("\n");
                 }
             }

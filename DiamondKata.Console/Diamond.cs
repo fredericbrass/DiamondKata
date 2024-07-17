@@ -26,6 +26,9 @@ namespace DiamondKata.Console
                 }
                 else
                 {
+                    var index = i - 'A';
+                    var spaceBetween = new string(' ', 2 * index - 1);
+
                     diamond.Append($"{space}{i}{i}{space}");
                     diamond.Append("\n");
                 }

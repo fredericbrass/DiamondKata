@@ -1,2 +1,10 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿using DiamondKata.Console;
+
+public static class Program
+{
+    static void Main(string[] args)
+    {
+        var diamond = Diamond.Create(args);
+        Console.WriteLine(diamond);
+    }
+}

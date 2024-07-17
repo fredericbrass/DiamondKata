@@ -108,5 +108,18 @@ namespace DiamondKata.Tests
             //Assert
             Assert.That(result, Is.EqualTo(expectedResult));
         }
+
+        [Test]
+        public void Create_GivenE_ReturnsExpectedDiamond()
+        {
+            //Arrange
+            var expectedResult = "    A    \n" + "   B B   \n" + "  C   C  \n" + " D     D \n" + "E       E\n" + " D     D \n" + "  C   C  \n" + "   B B   \n" + "    A    ";
+
+            //Act
+            var result = Diamond.Create(_input);
+
+            //Assert
+            Assert.That(result, Is.EqualTo(expectedResult));
+        }
     }
 }

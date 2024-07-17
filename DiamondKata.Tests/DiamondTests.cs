@@ -17,5 +17,19 @@ namespace DiamondKata.Tests
             //Assert
             Assert.That(result, Is.EqualTo(expectedResult));
         }
+
+        [Test]
+        public void Create_GivenB_GivesSequencing()
+        {
+            //Arrange
+            var expectedResult = "AB";
+            string[] input = ["B"];
+
+            //Act
+            var result = Diamond.Create(input);
+
+            //Assert
+            Assert.That(result, Is.EqualTo(expectedResult));
+        }
     }
 }

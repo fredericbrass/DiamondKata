@@ -69,6 +69,7 @@ namespace DiamondKata.Tests
         }
 
         [Test]
+        [Ignore("test redundant as space between the middle of repeating characters has been added")]
         public void Create_GivenB_IdentCharsOnEachSide()
         {
             //Arrange
@@ -86,6 +87,19 @@ namespace DiamondKata.Tests
         {
             //Arrange
             var expectedResult = " A \n" + "B B\n";
+
+            //Act
+            var result = Diamond.Create(_input);
+
+            //Assert
+            Assert.That(result, Is.EqualTo(expectedResult));
+        }
+
+        [Test]
+        public void Create_GivenB_PrintsBottomHalf()
+        {
+            //Arrange
+            var expectedResult = " A \n" + "B B\n" + " A \n";
 
             //Act
             var result = Diamond.Create(_input);

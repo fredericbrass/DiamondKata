@@ -70,7 +70,7 @@ namespace DiamondKata.Services
 
             if (!char.IsLetter(args[0][0]))
             {
-                throw new ArgumentException("Invalid input - Please enter a singular character");
+                throw new ArgumentException("Invalid input - Please enter a singular character from A-Z");
             }
         }
     }

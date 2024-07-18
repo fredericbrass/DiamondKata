@@ -12,7 +12,14 @@ public static class Program
 
         var diamondService = serviceProvider.GetService<IDiamondService>();
 
-        var diamond = diamondService.Create(args);
-        Console.WriteLine(diamond);
+        try
+        {
+            var diamond = diamondService.Create(args);
+            Console.WriteLine(diamond);
+        }
+        catch(Exception ex)
+        {
+            Console.WriteLine(ex.Message);
+        }
     }
 }
